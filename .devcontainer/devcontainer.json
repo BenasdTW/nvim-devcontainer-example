@@ -1,12 +1,30 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "name": "Existing Dockerfile",
+    "build": {
+        // Sets the run context to one level up instead of the .devcontainer folder.
+        "context": "..",
+        // Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+        "dockerfile": "../Dockerfile"
+    },
     "features": {
         "ghcr.io/benasdtw/devcontainer-features/ben-nvim:latest": {}
     },
     "runArgs": [
+        // "--gpus",
+        // "all"
         "-p=8888:8888"
     ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+            ]
+        }
+    },
 
+    //"mounts": [
+    //	"source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+    //],
+    //"postCreateCommand": "git config --global --add safe.directory /workspaces/RMAClient"
     "containerUser": "root",
     "remoteUser": "root"
 }
