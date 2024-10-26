@@ -1,0 +1,12 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+    "features": {
+        "ghcr.io/benasdtw/devcontainer-features/ben-nvim:latest": {}
+    },
+    "runArgs": [
+        "-p=8888:8888"
+    ],
+
+    "containerUser": "root",
+    "remoteUser": "root"
+}
